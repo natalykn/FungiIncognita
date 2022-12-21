@@ -146,9 +146,11 @@ xcuserdata/**/*
 
 
 UserInterfaceState.xcuserstate
-/include
-/Sources/Pods/*
 /bin
 /lib
 WorkspaceSettings.xcsettings
 /Pods
+GoogleService-Info.plist
+*.xcworkspacedata
+FungiClassifierWithAugms.mlmodel
+IDEWorkspaceChecks.plist
