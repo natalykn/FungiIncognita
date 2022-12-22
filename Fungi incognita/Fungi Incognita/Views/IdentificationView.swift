@@ -77,6 +77,7 @@ struct IdentificationView: View {
                 }
         }
         .padding()
+        .background(colorBackground)
     }
 }
 

@@ -18,9 +18,7 @@ struct ContentView: View {
 
     var body: some View {
 
-        ZStack(alignment: Alignment(horizontal: .center,
-                                    vertical: .bottom)) {
-
+        VStack(alignment: .center) {
             TabView(selection: $selectedTabBar) {
                 switch selectedTabBar {
                 case .home:
@@ -35,7 +33,6 @@ struct ContentView: View {
                     InfoView()
                 }
             }
-
             HStack {
                 TabBarItem(imageName: "house",
                            tag: .home,
@@ -77,6 +74,7 @@ struct ContentView: View {
             .background(mainColors.clipShape(CustomShape(xOffSet: xOffSet)).cornerRadius(10))
             .padding(.horizontal)
         }
+        .background(colorBackground)
     }
 }
 

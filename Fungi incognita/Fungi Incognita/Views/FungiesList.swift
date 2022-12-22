@@ -11,6 +11,7 @@ struct FungiesList: View {
     @EnvironmentObject var fungiRepository: FungiRepository
     @SceneStorage("searchText") private var searchText = ""
     var onlyFavorities: Bool
+    var bottomPadding: CGFloat = 40
     var body: some View {
         NavigationView {
             List {
@@ -19,19 +20,17 @@ struct FungiesList: View {
                     FungiShortInfo(fungi: fungi)
                         .environmentObject(fungiRepository)
                         .listRowSeparator(.hidden)
-                }.listRowBackground(mainColors1)
-            }
-            .searchable(text: $searchText) {
-                ForEach(fungiRepository.searchResults(searchText: searchText,
-                                                      onlyFavorites: onlyFavorities), id: \.self) { result in
-                    Text("Are you looking for \(result.name)?").searchCompletion(result.name)
-                }
+                }.listRowBackground(colorForListRowBackground)
             }
             .navigationTitle("Fungies")
-
+        }
+        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always)) {
+            ForEach(fungiRepository.searchResults(searchText: searchText,
+                                                  onlyFavorites: onlyFavorities), id: \.self) { result in
+                Text("Are you looking for \(result.name)?").searchCompletion(result.name)
+            }
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-        .padding(.bottom, 80)
         .edgesIgnoringSafeArea(.all)
     }
 }

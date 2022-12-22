@@ -40,7 +40,7 @@ struct ProfileView: View {
 
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-        .background(mainColors3)
+        .background(colorProfileBackground)
     }
 }
 
