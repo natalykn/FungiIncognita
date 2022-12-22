@@ -11,6 +11,7 @@ struct ContentView: View {
     @State private var selectedTabBar = TabImems.home
     @State public var xOffSet: Double = 0
     @EnvironmentObject var fungiRepository: FungiRepository
+    @Environment(\.colorScheme) var colorScheme
 
     init() {
         UITabBar.appearance().isHidden = true
@@ -74,7 +75,7 @@ struct ContentView: View {
             .background(mainColors.clipShape(CustomShape(xOffSet: xOffSet)).cornerRadius(10))
             .padding(.horizontal)
         }
-        .background(colorBackground)
+        .background((colorScheme == .light || selectedTabBar == .identificationFungi) ? colorBackground : .clear)
     }
 }
 
