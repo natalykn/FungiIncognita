@@ -13,6 +13,8 @@ struct TabBarItem: View {
     @Binding var selectedTabBar: TabImems
     var isSystemImage: Bool
     var isFirst: Bool = false
+    let itemSize: CGFloat = 30
+
     @Binding var xOffSet: Double
     var body: some View {
         GeometryReader { reader in
@@ -31,6 +33,6 @@ struct TabBarItem: View {
                                  xOffSet = reader.frame(in: .global).minX
                              }
                          })
-        }.frame(width: 30, height: 30)
+        }.frame(width: itemSize, height: itemSize)
     }
 }

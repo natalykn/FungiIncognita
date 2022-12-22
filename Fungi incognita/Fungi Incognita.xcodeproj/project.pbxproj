@@ -160,7 +160,9 @@
 		D839EBA8282117780018B030 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D86B1598281D19EF004A42DD /* Cells */,
 				D874F740282BA40400F69CE0 /* Tabbar */,
+				D86B1592281D18EC004A42DD /* Views */,
 				D839EBA92821178C0018B030 /* ColorSlider.swift */,
 				D85F1BD72826AA160008DA21 /* FungiImage.swift */,
 				D85F1BDF2827C6D20008DA21 /* RoundedButton.swift */,
@@ -206,18 +208,16 @@
 		D86B1581281D0711004A42DD /* Fungi Incognita */ = {
 			isa = PBXGroup;
 			children = (
-				D85F1BD2282687A90008DA21 /* Helpers */,
 				D883C3162821861700958E7C /* Fungi-Incognita-Info.plist */,
 				D839EBB328212B1F0018B030 /* Launch Screen.storyboard */,
+				D85F1BD2282687A90008DA21 /* Helpers */,
 				D883C3392822D8F700958E7C /* Models */,
 				D883C3382822D8F700958E7C /* Repositories */,
 				D883C3362822D8F600958E7C /* Services */,
 				D839EBA8282117780018B030 /* UI */,
 				D839EB9E281D5A1D0018B030 /* Extensions */,
 				D86B159B281D205E004A42DD /* CommonLets */,
-				D86B1598281D19EF004A42DD /* Cells */,
 				D86B1593281D18F8004A42DD /* Classifier */,
-				D86B1592281D18EC004A42DD /* Views */,
 				D86B1582281D0711004A42DD /* FungiIncognitaApp.swift */,
 				D86B1584281D0711004A42DD /* ContentView.swift */,
 				D86B1586281D0714004A42DD /* Assets.xcassets */,
@@ -247,6 +247,7 @@
 				D85F1BE12827D4120008DA21 /* About.swift */,
 			);
 			name = Views;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		D86B1593281D18F8004A42DD /* Classifier */ = {
@@ -266,6 +267,7 @@
 				D874F73E282BA0E600F69CE0 /* AnswerCell.swift */,
 			);
 			name = Cells;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		D86B159B281D205E004A42DD /* CommonLets */ = {
