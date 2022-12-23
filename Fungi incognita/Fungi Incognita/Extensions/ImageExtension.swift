@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 let imageSize: CGFloat = 299
+let bitsPerComponent: Int = 8
 
 func buffer(from image: UIImage) -> CVPixelBuffer? {
     let attrs = [kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue,
@@ -31,7 +32,7 @@ func buffer(from image: UIImage) -> CVPixelBuffer? {
     let context = CGContext(data: pixelData,
                             width: Int(image.size.width),
                             height: Int(image.size.height),
-                            bitsPerComponent: 8,
+                            bitsPerComponent: bitsPerComponent,
                             bytesPerRow: CVPixelBufferGetBytesPerRow(pixelBuffer!),
                             space: rgbColorSpace,
                             bitmapInfo: CGImageAlphaInfo.noneSkipFirst.rawValue)
@@ -69,7 +70,7 @@ extension UIImage {
         guard let context = CGContext(data: pixelData,
                                       width: width,
                                       height: height,
-                                      bitsPerComponent: 8,
+                                      bitsPerComponent: bitsPerComponent,
                                       bytesPerRow: CVPixelBufferGetBytesPerRow(pixelBuffer),
                                       space: CGColorSpaceCreateDeviceRGB(),
                                       bitmapInfo: CGImageAlphaInfo.noneSkipFirst.rawValue)
