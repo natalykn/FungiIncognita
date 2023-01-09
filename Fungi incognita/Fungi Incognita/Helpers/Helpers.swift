@@ -10,11 +10,11 @@ import FirebaseStorage
 import UIKit
 
 let storageUrl = "gs://fungi-incognita.appspot.com"
+let storage = Storage.storage()
+let reference: StorageReference = storage.reference(forURL: storageUrl)
 
 func imageUrlFromFirebase(from cover: String, completionHandler:  @escaping(_ result: URL?, _ error: Error?) -> Void) {
-    let storage = Storage.storage()
 
-    let reference: StorageReference = storage.reference(forURL: storageUrl)
     let referenceForUrl: StorageReference = reference.child(cover)
     referenceForUrl.downloadURL { (url, error) in
         if error != nil {

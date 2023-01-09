@@ -38,6 +38,5 @@ struct TabbarButton: View {
 
     func imageForButton() -> Image {
         isSystemImage ? Image(systemName: image) : Image(image)
-
     }
 }
